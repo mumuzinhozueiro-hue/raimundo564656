@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  
+  fbq('init', '3236897849821616'); // Substitua pelo seu ID do Pixel
+  fbq('track', 'PageView');
+  fbq('track', 'Purchase', {
+    value: 14.90, // valor da compra
+    currency: 'BRL' // moeda da compra (Real brasileiro)
+  });
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=3236897849821616&ev=PageView&noscript=1"/>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=3236897849821616&ev=Purchase&cd[value]=100.00&cd[currency]=BRL&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecionando...</title>
+  <meta name="description" content="Página de redirecionamento com barra de progresso." />
+  <!-- Fallback para quem estiver com JS desativado -->
+  <noscript>
+    <meta http-equiv="refresh" content="6;url=https://t.me/+0iT45hKoQYc2NzE5" />
+  </noscript>
+  <style>
+    :root {
+      --bg1: 255 255 255;
+      --bg2: 238 242 255;
+      --primary: 59 130 246; /* azul */
+      --primary-weak: 191 219 254;
+      --text: 17 24 39; /* slate-900 */
+      --muted: 107 114 128; /* gray-500 */
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --maxw: 560px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: rgb(var(--text));
+      background: linear-gradient(180deg, rgb(var(--bg1)) 0%, rgb(var(--bg2)) 100%);
+      display: grid;
+      place-items: center;
+    }
+
+    .card {
+      width: min(92vw, var(--maxw));
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 10px 0;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .spinner {
+      width: 22px; height: 22px;
+      border: 3px solid rgb(var(--primary-weak));
+      border-top-color: rgb(var(--primary));
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .subtitle {
+      margin: 0 0 18px 0;
+      color: rgb(var(--muted));
+    }
+
+    .progress-wrap {
+      background: rgba(0,0,0,.05);
+      border-radius: 999px;
+      height: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(59,130,246,1) 0%, rgba(99,102,241,1) 50%, rgba(56,189,248,1) 100%);
+      border-radius: inherit;
+      transition: width .12s linear;
+    }
+
+    .progress-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 10px;
+      font-size: .95rem;
+      color: rgb(var(--muted));
+    }
+
+    .button-row {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      appearance: none; border: none; cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      background: rgba(59,130,246,.1);
+      color: rgb(var(--text));
+    }
+
+    .btn.primary {
+      background: rgb(var(--primary));
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(59,130,246,.25);
+    }
+
+    .small { font-size: .9rem; }
+
+    footer { margin-top: 16px; font-size: .85rem; color: rgb(var(--muted)); text-align: center; }
+  </style>
+</head>
+<body>
+  <main class="card" role="region" aria-labelledby="titulo">
+    <h1 id="titulo" class="title"><span class="spinner" aria-hidden="true"></span> Redirecionando…</h1>
+    <p class="subtitle">Aguarde um instante enquanto preparamos sua próxima página.</p>
+
+    <div class="progress-wrap" role="progressbar" aria-label="Progresso do redirecionamento" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="progress-bar" id="bar"></div>
+    </div>
+    <div class="progress-meta">
+      <span id="percent">0%</span>
+      <span id="seconds" class="small"></span>
+    </div>
+
+    <div class="button-row">
+      <a id="goNow" class="btn primary" href="#">Ir agora</a>
+    </div>
+
+    <footer>
+      Se nada acontecer, <a id="fallbackLink" href="https://t.me/+0iT45hKoQYc2NzE5">clique aqui</a>.
+    </footer>
+  </main>
+
+  <script>
+    // ======= CONFIGURAÇÃO RÁPIDA =======
+    const REDIRECT_URL = "https://t.me/+0iT45hKoQYc2NzE5"; // ➜ Troque pelo destino desejado
+    const DELAY_MS = 5000; // ➜ Tempo até redirecionar (em ms)
+    // ====================================
+
+    const bar = document.getElementById('bar');
+    const percentEl = document.getElementById('percent');
+    const secondsEl = document.getElementById('seconds');
+    const goNow = document.getElementById('goNow');
+    const progressWrap = document.querySelector('.progress-wrap');
+    const fallback = document.getElementById('fallbackLink');
+
+    // Ajusta links para o destino escolhido
+    goNow.href = REDIRECT_URL;
+    fallback.href = REDIRECT_URL;
+
+    let start = null;
+    let rafId = null;
+
+    function fmt(ms) {
+      const s = Math.max(0, Math.ceil(ms/1000));
+      return s + (s === 1 ? ' segundo' : ' segundos');
+    }
+
+    function step(ts) {
+      if (!start) start = ts;
+      const elapsed = ts - start;
+      const pct = Math.min(100, (elapsed / DELAY_MS) * 100);
+      bar.style.width = pct + '%';
+      percentEl.textContent = Math.round(pct) + '%';
+      progressWrap.setAttribute('aria-valuenow', Math.round(pct));
+      const remaining = Math.max(0, DELAY_MS - elapsed);
+      secondsEl.textContent = 'Redirecionando em ' + fmt(remaining) + '…';
+
+      if (elapsed >= DELAY_MS) {
+        window.location.replace(REDIRECT_URL);
+      } else {
+        rafId = requestAnimationFrame(step);
+      }
+    }
+
+    rafId = requestAnimationFrame(step);
+
+    goNow.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.assign(REDIRECT_URL);
+    });
+  </script>
+</body>
+</html>
